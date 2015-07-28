@@ -2,10 +2,10 @@
 <html><a href="index.php"><img src="wroc.png"/></a></html>
 <br>
 <?php
-
-$connection = @mysql_connect('mysql.cba.pl', 'nookinka', 'mamatata4');
-
-$db = @mysql_select_db('lernen_cba_pl', $connection);
+include 'config.php';
+$connection = @mysql_connect($tablica['localhost'], $tablice['user'], $tablica['password']);
+//$connection = @mysql_connect('localhost', 'root', '');
+$db = @mysql_select_db($tablica['basename'], $connection);
 
 
 $query='SELECT * FROM dane';

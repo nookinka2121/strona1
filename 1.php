@@ -15,7 +15,7 @@
   <div>
 
   Imie:<br />
-djdjdjdjd
+
   <input name="imie" value="" /><br />
 
   Nazwisko:<br />
@@ -45,12 +45,10 @@ djdjdjdjd
 
 
 <?php
-
+include 'config.php';
 if(isset($_POST['submit'])){
-$connection = @mysql_connect('mysql.cba.pl', 'nookinka', 'mamatata4');
-
-$db = @mysql_select_db('lernen_cba_pl', $connection);
-
+$connection = @mysql_connect($tablica['localhost'], $tablice['user'], $tablica['password']);
+$db = @mysql_select_db($tablica['basename'], $connection);
 
 $query='SELECT * FROM dane';
 
